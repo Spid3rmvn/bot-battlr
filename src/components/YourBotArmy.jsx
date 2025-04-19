@@ -13,7 +13,7 @@ const YourBotArmy = ({ army, onBotRemoved, onBotDeleted }) => {
             <BotCard
               key={bot.id}
               bot={bot}
-              onBotAdded={() => {}} // Not needed in army view
+              onBotAdded={() => {}}
               onBotRemoved={onBotRemoved}
               onBotDeleted={onBotDeleted}
               isInArmy={true}
