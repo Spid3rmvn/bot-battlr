@@ -28,19 +28,19 @@ export const deleteBot = async (botId) => {
     throw error;
   }
 };
-export const addBotToArmy = async (botId) => {
+export const addBotToArmy = async (bot) => {
   try {
-    const response = await fetch(`${BASE_URL}/${botId}`, {
+    const response = await fetch("http://localhost:5000/army", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ botId }),
+      body: JSON.stringify(bot), // Send the bot object directly
     });
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-    return true;
+    return await response.json(); // Return the added bot
   } catch (error) {
     console.error("Error adding bot to army:", error);
     throw error;
