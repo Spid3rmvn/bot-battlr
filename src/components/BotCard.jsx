@@ -41,9 +41,6 @@ const BotCard = ({ bot, onBotDeleted, onBotAdded, onBotRemoved }) => {
       <p>
         <strong>Armor:</strong> {bot.armor}
       </p>
-      <p>
-        <strong>Catchphrase:</strong> "{bot.catchphrase}"
-      </p>
       <button onClick={handleAddToArmy}>Add to Army</button>
       <button onClick={handleRemoveFromArmy}>Remove from Army</button>
       <button onClick={handleDelete}>Delete Bot</button>
