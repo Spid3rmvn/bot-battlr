@@ -37,6 +37,11 @@
 }
 
 .bot-card p {
+  margin: 5px 0;
   font-size: 0.9rem;
-  color: #666;
+  color: #555;
+}
+
+.bot-card strong {
+  color: #333;
 }

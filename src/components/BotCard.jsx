@@ -28,8 +28,22 @@ const BotCard = ({ bot, onBotDeleted, onBotAdded, onBotRemoved }) => {
   return (
     <div className="bot-card">
       <h3>{bot.name}</h3>
-      <img src={bot.image} alt={bot.name} />
-      <p>{bot.description}</p>
+      <img src={bot.avatar_url} alt={bot.name} />
+      <p>
+        <strong>Class:</strong> {bot.bot_class}
+      </p>
+      <p>
+        <strong>Health:</strong> {bot.health}
+      </p>
+      <p>
+        <strong>Damage:</strong> {bot.damage}
+      </p>
+      <p>
+        <strong>Armor:</strong> {bot.armor}
+      </p>
+      <p>
+        <strong>Catchphrase:</strong> "{bot.catchphrase}"
+      </p>
       <button onClick={handleAddToArmy}>Add to Army</button>
       <button onClick={handleRemoveFromArmy}>Remove from Army</button>
       <button onClick={handleDelete}>Delete Bot</button>
