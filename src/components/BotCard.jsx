@@ -11,10 +11,11 @@ const BotCard = ({ bot, onBotDeleted, onBotAdded, onBotRemoved }) => {
   };
   const handleAddToArmy = async () => {
     try {
-      await addBotToArmy();
+      await addBotToArmy(bot);
       onBotAdded(bot);
     } catch (error) {
-      console.error("Error adding bot to army:", error);
+      console.error("Error adding bot to army:", error.message);
+      alert("Failed to add bot to the army. Please try again.");
     }
   };
   const handleRemoveFromArmy = async () => {

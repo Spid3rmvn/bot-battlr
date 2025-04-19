@@ -3,6 +3,7 @@ const BASE_URL = "http://localhost:5000/bots";
 export const fetchBots = async () => {
   try {
     const response = await fetch(BASE_URL);
+
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
@@ -35,12 +36,12 @@ export const addBotToArmy = async (bot) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(bot), // Send the bot object directly
+      body: JSON.stringify(bot),
     });
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-    return await response.json(); // Return the added bot
+    return await response.json();
   } catch (error) {
     console.error("Error adding bot to army:", error);
     throw error;
