@@ -68,9 +68,18 @@ const App = () => {
 
   // Handle deleting a bot
   const handleDeleteBot = async (botId) => {
+    console.log("Deleting bot with ID:", botId);
     try {
-      await deleteBot(botId);
-      setBots((prevBots) => prevBots.filter((bot) => bot.id !== botId));
+      const result = await deleteBot(botId);
+      console.log("Delete API response:", result);
+
+      setBots((prevBots) => {
+        console.log("Previous bots:", prevBots);
+        const newBots = prevBots.filter((bot) => bot.id !== botId);
+        console.log("New bots:", newBots);
+        return newBots;
+      });
+
       setArmy((prevArmy) => prevArmy.filter((bot) => bot.id !== botId));
     } catch (err) {
       console.error("Error deleting bot:", err);
