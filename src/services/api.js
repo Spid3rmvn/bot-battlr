@@ -1,5 +1,6 @@
-const BOTS_URL = "http://localhost:5000/bots";
-const ARMY_URL = "http://localhost:5000/army";
+const BASE_URL = "https://your-deployed-api.herokuapp.com";
+const BOTS_URL = `${BASE_URL}/bots`;
+const ARMY_URL = `${BASE_URL}/army`;
 
 // Fetch all bots
 export const fetchBots = async () => {
